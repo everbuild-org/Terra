@@ -28,7 +28,7 @@ import java.util.stream.Stream;
  * <br>
  * These system properties are formatted like UNIX-style paths, with each path separated by a colon (':') character.
  */
-public interface CliExtensibleRegistry {
+public interface ExtensibleRegistry {
     /**
      * Get a lowercase search path name for this registry that will get plugged into
      * <br>
@@ -63,7 +63,7 @@ public interface CliExtensibleRegistry {
         return Stream.concat(
                 searchPath
                     .filter(Files::isDirectory)
-                    .flatMap(CliExtensibleRegistry::listDirectory),
+                    .flatMap(ExtensibleRegistry::listDirectory),
                 extraPath
             )
             .filter(this::validatePathIsMember);

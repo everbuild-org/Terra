@@ -28,7 +28,7 @@ import com.dfsek.terra.api.Platform;
 import com.dfsek.terra.api.config.MetaPack;
 import com.dfsek.terra.api.util.reflection.TypeKey;
 import com.dfsek.terra.config.pack.MetaPackImpl;
-import com.dfsek.terra.registry.CliExtensibleRegistry;
+import com.dfsek.terra.registry.ExtensibleRegistry;
 import com.dfsek.terra.registry.OpenRegistryImpl;
 import com.dfsek.terra.registry.master.ConfigRegistry.PackLoadFailuresException;
 
@@ -36,7 +36,7 @@ import com.dfsek.terra.registry.master.ConfigRegistry.PackLoadFailuresException;
 /**
  * Class to hold config packs
  */
-public class MetaConfigRegistry extends OpenRegistryImpl<MetaPack> implements CliExtensibleRegistry {
+public class MetaConfigRegistry extends OpenRegistryImpl<MetaPack> implements ExtensibleRegistry {
 
     public MetaConfigRegistry() {
         super(TypeKey.of(MetaPack.class));

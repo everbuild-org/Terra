@@ -29,14 +29,14 @@ import com.dfsek.terra.api.Platform;
 import com.dfsek.terra.api.config.ConfigPack;
 import com.dfsek.terra.api.util.reflection.TypeKey;
 import com.dfsek.terra.config.pack.ConfigPackImpl;
-import com.dfsek.terra.registry.CliExtensibleRegistry;
+import com.dfsek.terra.registry.ExtensibleRegistry;
 import com.dfsek.terra.registry.OpenRegistryImpl;
 
 
 /**
  * Class to hold config packs
  */
-public class ConfigRegistry extends OpenRegistryImpl<ConfigPack> implements CliExtensibleRegistry {
+public class ConfigRegistry extends OpenRegistryImpl<ConfigPack> implements ExtensibleRegistry {
 
     public ConfigRegistry() {
         super(TypeKey.of(ConfigPack.class));
