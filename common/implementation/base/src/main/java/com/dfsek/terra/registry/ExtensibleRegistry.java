@@ -54,11 +54,11 @@ public interface ExtensibleRegistry {
         String basePropertyName = "terra.registry." + getRegistryName();
 
         Stream<Path> searchPath = Stream.concat(
-            parseValidPaths(System.getProperty(basePropertyName + ".searchPath")),
+            parseValidPaths(System.getProperty(basePropertyName + ".search-path")),
             Stream.of(baseSearchPath)
         );
 
-        Stream<Path> extraPath = parseValidPaths(System.getProperty(basePropertyName + ".extraPath"));
+        Stream<Path> extraPath = parseValidPaths(System.getProperty(basePropertyName + ".extra-path"));
 
         return Stream.concat(
                 searchPath
