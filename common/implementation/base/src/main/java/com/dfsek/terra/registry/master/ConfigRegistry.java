@@ -68,8 +68,7 @@ public class ConfigRegistry extends OpenRegistryImpl<ConfigPack> implements Exte
 
     @Override
     public boolean validatePathIsMember(Path path) {
-        var file = path.toFile();
-        return file.isDirectory() || file.getName().endsWith(".zip");
+        return Files.isDirectory(path)|| path.getFileName().endsWith(".zip");
     }
 
     public static class PackLoadFailuresException extends Exception {
